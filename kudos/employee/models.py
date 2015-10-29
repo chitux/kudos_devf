@@ -13,10 +13,10 @@ class Employee(models.Model):
 
 
 class Kudo(models.Model):
-    writer = models.ForeignKey('employee.Employee')
+    writer = models.ForeignKey('employee.Employee', related_name='writer')
     employee_id = models.ForeignKey('employee.Employee')
-    kudo_body = models.char(255)
-    is_active = models.BooleanField(defaul=True)
+    kudo_body = models.CharField(max_length=255)
+    is_active = models.BooleanField(default=True)
 
 
 class Purchase(models.Model):
