@@ -11,6 +11,6 @@ class Company(models.Model):
 class Product(models.Model):
     company_id = models.ForeignKey('company.Company')
     name = models.CharField(max_length=80)
-    description = models.CharField(max_length=320)
+    description = models.TextField(max_length=320)
     price = models.FloatField(max_length=100)
     icon = models.CharField(max_length=320)
