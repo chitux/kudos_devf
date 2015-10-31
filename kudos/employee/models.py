@@ -22,5 +22,5 @@ class Kudo(models.Model):
 class Purchase(models.Model):
     product_id = models.ForeignKey('company.Product')
     employee_id = models.ForeignKey('employee.Employee')
-    purchase_date = models.TimeField(default=datetime.now)
+    purchase_date = models.DateTimeField(default=datetime.now)
     status = models.BooleanField(default=True)
