@@ -1,3 +1,63 @@
-h1 {
-	color: red;
+body {
+    background: #EAEAEA;
+}
+
+#company-signup {
+	margin-top: 8%;
+}
+
+#logo {
+    text-align: center;
+    font-size: 60px;
+    font-family: sans-serif;
+    font-weight: bold;
+}
+
+.sign-form {
+    background: #fff;
+    border-radius: 3px;
+    padding: 0;
+}
+
+.sign-form-head {
+    background: #4DBB92;
+    color: #4C4C4C;
+    padding: 15px;
+    font-size: 17px;
+    border-top-right-radius: 3px;
+    border-top-left-radius: 3px;
+    font-weight: bold;
+    text-align: center;
+}
+
+#signup {
+    padding: 20px;
+}
+
+.sign-form form input[type="text"],
+.sign-form form input[type="email"],
+.sign-form form input[type="password"] {
+    width: 100%;
+    margin: 0px 0px 12px;
+    padding: 10px;
+    color: #7A7884;
+    border-radius: 4px;
+    border: 1px solid #BFBFBF;
+}
+
+.btn {
+    background: #333;
+    border: none;
+    border-radius: 4px;
+    width: 100%;
+    padding: 12px;
+    color: #fff;
+    margin-top: 20px;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.btn:hover {
+    background: #272727;
+    color: #fff;
 }
