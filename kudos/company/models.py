@@ -5,6 +5,7 @@ class Company(models.Model):
     name = models.CharField(max_length=80)
     email = models.EmailField(max_length=320)
     phone = models.CharField(max_length=10)
+    password = models.CharField(max_length=40)
     invitation_code = models.CharField(max_length=10)
 
 
