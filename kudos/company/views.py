@@ -1,16 +1,21 @@
 from django.shortcuts import render, redirect
 from django.core.urlresolvers import reverse
+from company.forms import Signup, Login
+from django.views.generic import View
 from django.http import HttpResponse
-from company.forms import Signup
-import hashlib
 from hashids import Hashids
+import hashlib
 
 
 
-def signup(request):
-    hashids = Hashids()
+class CompanySignup(View):
+    def get(self, request):
+        form = Signup()
+        return render(request, 'company/signup.html', {'form': form})
 
-    if request.method == 'POST':
+
+    def post(self, request):
+        hashids = Hashids()
         form = Signup(request.POST)
 
         if form.is_valid():
@@ -22,12 +27,12 @@ def signup(request):
             # update company, add invitation code
             company.invitation_code = hashids.encode(company.id)
             company.save()
-            return redirect(reverse('company:home'))
-
-    form = Signup()
-    return render(request, 'company/signup.html', {'form': form})
-
+            return redirect(reverse('company_home'))
+        else:
+            return render(request, 'company/signup.html', {'form': form})
 
 
-def home (request):
-    return HttpResponse('Welcome')
+
+class CompanyHome(View):
+    def get(self, request):
+        return HttpResponse("Company Home")
