@@ -2,8 +2,8 @@ body {
     background: #EAEAEA;
 }
 
-#company-signup {
-	margin-top: 8%;
+#company-sign {
+	margin-top: 5%;
 }
 
 #logo {
@@ -30,7 +30,7 @@ body {
     text-align: center;
 }
 
-#signup {
+#sign {
     padding: 20px;
 }
 
@@ -43,6 +43,13 @@ body {
     color: #7A7884;
     border-radius: 4px;
     border: 1px solid #BFBFBF;
+}
+
+.errorlist {
+    padding: 0;
+    list-style: none;
+    color: #C51F1F;
+    font-weight: bold;
 }
 
 .btn {

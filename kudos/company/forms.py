@@ -4,6 +4,7 @@ from company.models import Company
 class Signup(forms.ModelForm):
     class Meta:
         model = Company
+        exclude = ['invitation_code']
         widgets = {
             'name': forms.TextInput(attrs={
                 'placeholder': 'Your company\'s name'
@@ -18,4 +19,13 @@ class Signup(forms.ModelForm):
                 'placeholder': '****************'
             }),
         }
-        exclude = ['invitation_code']
+
+
+class Login(forms.ModelForm):
+    class Meta:
+        model = Company
+        fields = ['email', 'password']
+        widgets = {
+            'email': forms.EmailInput(attrs={'placeholder': 'Company\'s email'}),
+            'password': forms.PasswordInput(attrs={'placeholder': '*********'}),
+        }

@@ -1,19 +1,19 @@
 {% extends 'base.html' %}
 
-{% block title %} Signup {% endblock %}
+{% block title %} Login {% endblock %}
 
 {% block body %}
-	
+    
     <section id="company-sign">
 
         <h1 id="logo">KUDOS</h1>
         <div class="sign-form col-md-4 col-md-offset-4">
             <div class="sign-form-head">
-                Signup and make your company happy
+                Company login
             </div>
 
 
-            <form action='/company/signup/' method="POST" id="sign">
+            <form action='/company/login/' method="POST" id="sign">
                 {% csrf_token %}
                 {{ form.as_p }}
                 <input class="btn" type="submit" value="Entrar" />
