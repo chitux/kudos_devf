@@ -6,10 +6,11 @@ class Employee(models.Model):
     first_name = models.CharField(max_length=35)
     last_name = models.CharField(max_length=35)
     email = models.EmailField(max_length=320)
-    profile_picture = models.FileField()
+    profile_picture = models.FileField(upload_to='profile_pictures')
     phone = models.CharField(max_length=10)
-    kudollars = models.FloatField()
+    kudollars = models.FloatField(default=0.0)
     company_id = models.ForeignKey('company.Company')
+    password = models.CharField(max_length=40)
 
 
 class Kudo(models.Model):

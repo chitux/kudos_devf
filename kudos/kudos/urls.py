@@ -16,7 +16,7 @@ Including another URLconf
 from django.conf.urls import include, url
 from django.contrib import admin
 from company.views import CompanySignup, CompanyHome
-from employee.views import EmployeeSignup
+from employee.views import EmployeeSignup, EmployeeHome
 
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
@@ -26,5 +26,7 @@ urlpatterns = [
     url(r'^company/home', CompanyHome.as_view(), name='company_home'),
 
     # Employee
-    url(r'^employee/signup/', EmployeeSignup.as_view(), name='employee_signup')
+    url(r'^employee/signup/(?P<company_id>\d+)/(?P<invitation_code>\w+)', 
+                            EmployeeSignup.as_view(), name='employee_signup'),
+    url(r'^employee/home/', EmployeeHome.as_view(), name='employee_home'),
 ]
