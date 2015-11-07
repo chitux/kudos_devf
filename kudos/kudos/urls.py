@@ -17,6 +17,8 @@ from django.conf.urls import include, url
 from django.contrib import admin
 from company.views import CompanySignup, CompanyHome
 from employee.views import EmployeeSignup, EmployeeHome
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
@@ -30,3 +32,6 @@ urlpatterns = [
                             EmployeeSignup.as_view(), name='employee_signup'),
     url(r'^employee/home/', EmployeeHome.as_view(), name='employee_home'),
 ]
+
+if settings.DEBUG:
+    urlpatterns = urlpatterns + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

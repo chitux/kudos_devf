@@ -1,5 +1,5 @@
 from django import forms
-from employee.models import Employee
+from employee.models import Employee, Kudo
 
 
 class Signup(forms.ModelForm):
@@ -22,4 +22,13 @@ class Signup(forms.ModelForm):
             'password': forms.PasswordInput(attrs={
                 'placeholder': '****************'
             }),
+        }
+
+
+class KudoForm(forms.ModelForm):
+    class Meta:
+        model = Kudo
+        exclude = ['is_active']
+        widgets = {
+            'kudo_body': forms.Textarea(attrs={'rows': 4})
         }

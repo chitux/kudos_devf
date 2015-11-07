@@ -2,10 +2,105 @@ body {
     background: #EAEAEA;
 }
 
-/*#company-sign {
-	margin-top: 5%;
+li {
+    list-style: none;
 }
-*/
+
+
+/*   Navbar   */
+.navbar {
+    background: #333;
+    border: none;
+    border-radius: 0;
+    margin-bottom: -20px;
+}
+
+.navbar-brand {
+    font-weight: bold;
+}
+
+.navbar-default .navbar-nav > li > a:hover {
+    color: #C7C7C7;
+}
+
+
+
+
+/*  Employee home  */
+.top-elements-banner {
+    background: #4DBB92;
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 10px;
+    color: #505050;
+}
+
+.top-employees{
+    width: 50%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.top-employees img{
+    width: 20%;
+    border-radius: 50%;
+    border: 5px solid #fff;
+    margin: 5px 15px;
+}
+
+.kudo-employee{
+    /*margin: 0px 0px 40px;*/
+}
+
+.kudo-employee span {
+    color: #929292;
+    margin: 0px 6px;
+}
+
+.kudo-employee img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin: 0px 5px 0px 0px;
+}
+
+.kudo-employee p {
+    font-size: 15px;
+    padding: 0px 60px;
+    margin-top: -15px;
+    font-weight: 300;
+    color: #333;
+    font-style: normal;
+}
+
+
+.home-form {
+    background: #fff;
+    overflow: auto;
+    max-height: 700px;
+}
+
+.home-form-head {
+    background: none;
+    font-size: 20px;
+    padding: 10px;
+    text-align: center;
+    font-weight: bold;
+    color: #929292;
+}
+
+.home-form form textarea,
+.home-form form select {
+    width: 100%;
+    margin: 0px 0px 12px;
+    padding: 10px;
+    color: #7A7884;
+    border-radius: 4px;
+    border: 1px solid #BFBFBF;
+}
+
+
+
 #logo {
     text-align: center;
     font-size: 60px;
@@ -67,4 +162,13 @@ body {
 .btn:hover {
     background: #272727;
     color: #fff;
+}
+
+footer{
+    height: 250px;
+    background: #333;
+    margin-top: 35px;
+    text-align: center;
+    color: #868686;
+    padding-top: 32px;
 }

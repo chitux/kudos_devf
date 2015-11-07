@@ -1,1 +1,73 @@
-Employee home
+{% extends 'base.html' %}
+
+{% block title %} Home {% endblock %}
+
+
+{% block body %}
+    {% include 'nav.html' %}
+    
+    <section id="employee-home">
+
+        <section class="top-elements-banner">
+            <h3>TOP EMPLOYEES</h3>
+
+            <div class="top-employees">
+                {% for employee in top_employees%}
+                    <img src="{{employee.profile_picture.url}}">
+                {% endfor %}
+            </div>
+        </section>
+
+        <br>
+
+        <div class="container">
+            <div class="row">
+                <div class="home-form col-md-4">
+                    <div class="home-form-head">
+                        Add new Kudo
+                        <hr>
+                    </div>
+
+
+                    <form action='/employee/home/' method="POST" id="sign">
+                        {% csrf_token %}
+                        {{ form.as_p }}
+                        <input class="btn" type="submit" value="Add Kudo" />
+                    </form>
+                </div>
+
+                <div class="home-form col-md-7" style="margin-left: 15px;">
+                    <div class="home-form-head">
+                        Last kudos
+                        <hr>
+                    </div>
+
+                    <ul>
+                        {% for kudo in last_kudos %}
+                            <li>
+                                <div class="kudo-employee">
+                                    <img src="{{kudo.employee_id.profile_picture.url}}">
+                                    <label>
+                                        To <span>{{kudo.employee_id.first_name}}</span>
+                                        from <span>{{kudo.writer.first_name}}</span>
+                                    </label>
+                                        <p>"{{kudo.kudo_body}}"</p>
+                                    <hr>
+                                </div>
+
+                            </li>
+                        {% endfor %}
+                    </ul>
+
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <footer>
+        ALL RIGHTS RESERVED <br>
+        kudos
+    </footer>
+
+{% endblock %}
